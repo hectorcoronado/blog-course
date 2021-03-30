@@ -51,11 +51,11 @@ const Seo = ({title, description, meta=[]}) => {
           content: site.siteMetadata.twitter || ``
         },
         {
-          propoerty: `twitter: description`,
+          property: `twitter: description`,
           content: META_DESCRIPTION
         },
         {
-          propoerty: `twitter: card`,
+          property: `twitter: card`,
           content: `summary`
         },
       ].concat(meta)
