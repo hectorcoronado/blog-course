@@ -1,16 +1,46 @@
-import * as React from "react"
+import * as React from 'react'
+import {graphql, Link} from 'gatsby'
 
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 
 // markup
-const IndexPage = () => {
+const IndexPage = ({data}) => {
+  const posts = data.allMdx.nodes
+
+  console.log('posts:')
+  console.log(posts)
+  
   return (
     <Layout>
       <Seo title={'homepage'}/>
-      <div>Hello world</div>
+      {
+        posts.map(post => {
+          return (
+            <Link
+              to={post.slug}
+              key={post.slug}
+            >
+              <h3>{post.frontmatter.title}</h3>
+            </Link>
+          )
+        })
+      }
     </Layout>
   )
 }
+
+export const pageQuery = graphql`
+{
+  allMdx(sort: {fields: [frontmatter___title], order: ASC}) {
+    nodes {
+      slug
+      frontmatter {
+        title
+      }
+    }
+  }
+}
+`
 
 export default IndexPage
