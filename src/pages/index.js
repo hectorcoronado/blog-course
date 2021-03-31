@@ -8,9 +8,6 @@ import Seo from '../components/Seo'
 const IndexPage = ({data}) => {
   const posts = data.allMdx.nodes
 
-  console.log('posts:')
-  console.log(posts)
-  
   return (
     <Layout>
       <Seo title={'homepage'}/>

@@ -6,6 +6,7 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-mdx`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -13,6 +14,11 @@ module.exports = {
                 name: `posts`
             }
         },
-        `gatsby-plugin-mdx`
+        {
+            resolve: `gatsby-plugin-theme-ui`,
+            options: {
+                preset: `@theme-ui/preset-future`
+            }
+        }
     ]
 }
