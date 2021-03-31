@@ -15,11 +15,9 @@ const mainStyles = {
   maxWidth: `container`,
   padding: `1rem`,
   mx: `auto`,
-  textAlign: `center`,
 }
 
 const footerStyles = {
-  textAlign: `center`,
   background: `lightgrey`,
 }
 

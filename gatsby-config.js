@@ -7,6 +7,8 @@ module.exports = {
     plugins: [
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-mdx`,
+        `gatsby-plugin-image`,
+        `gatsby-plugin-sharp`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -17,7 +19,8 @@ module.exports = {
         {
             resolve: `gatsby-plugin-theme-ui`,
             options: {
-                preset: `@theme-ui/preset-future`
+                preset: `@theme-ui/preset-future`,
+                prismPreset: `prism-okaidia`
             }
         }
     ]
